@@ -1,0 +1,22 @@
+aliases
+Personal aliases are preferably stored in~/.bashrc.
+And system-wide aliases(which affect all users) belong in /etc/bash.bashrc
+
+
+archlinux采用了udisks2来负责挂载分区，默认情况下支持ntfs挂载，但是只是可读不支持写操作。
+解决方法：
+    安装ntfs-3g
+    安装好ntfs-3g后，udisks2会默认调用ntfs-3g的mount.ntfs来挂在ntfs格式了。这样挂载的ntfs格式的分区就能够有写权限了。
+
+    另外，如果没有安装ntp的时候，是没有办法自动对时的。
+
+
+gnome terminal透明设置
+可以在~/.bashrc里添加一段代码实现
+
+if [ -n "$WINDOWID" ]; then
+TRANSPARENCY_HEX=$(printf 0x%x $((0xffffffff * 80 / 100)))
+xprop -id "$WINDOWID" -f _NET_WM_WINDOW_OPACITY 32c -set _NET_WM_WINDOW_OPACITY "$TRANSPARENCY_HEX"
+fi
+
+80为透明度

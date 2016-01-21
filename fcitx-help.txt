@@ -1,0 +1,6 @@
+安装fcitx 及.xprofile的配置	参考wiki.archlinux.org
+重启后用fcitx-diagnose检测各种错误情况，针对错误去arch论坛搜索
+
+
+针对无法在gnome gedit等软件中输入中文的问题（但已经可以在leafpad中正常输入），执行
+gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "{'Gtk/IMModule':<'fcitx'>}"
