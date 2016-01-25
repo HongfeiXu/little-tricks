@@ -1,0 +1,5 @@
+Sublime Text 3 安装插件管理器（Package Control）
+
+果你的电脑安装了python3可以直接使用:
+
+import urllib.request, urllib.error, urllib.parse,os; pf='Package Control.sublime-package'; ipp=sublime.installed_packages_path(); os.makedirs(ipp) if not os.path.exists(ipp) else None; urllib.request.install_opener(urllib.request.build_opener(urllib.request.ProxyHandler())); open(os.path.join(ipp,pf),'wb').write(urllib.request.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read()); print('Please restart Sublime Text to finish installation')
